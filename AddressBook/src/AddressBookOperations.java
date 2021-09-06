@@ -7,8 +7,11 @@ public class AddressBookOperations {
     UserInputUtil input = new UserInputUtil();
 
     public void add() {
-        Contact contact = new Contact(in.addFName(), in.addSName(), in.addAddress(), in.addCity(), in.addState(), in.addZip(), in.addno(), in.addmail());
-        addressBookSet.add(contact);
+        System.out.println("How many Contact details you want yo Enter : ");
+        for (int i = 0; i < input.intInput(); i++) {
+            Contact contact = new Contact(in.addFName(), in.addSName(), in.addAddress(), in.addCity(), in.addState(), in.addZip(), in.addno(), in.addmail());
+            addressBookSet.add(contact);
+        }
     }
 
     public void display() {

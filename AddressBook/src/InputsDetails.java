@@ -2,7 +2,7 @@ public class InputsDetails {
     static UserInputUtil input = new UserInputUtil();
 
     String addFName(){
-        System.out.print("Enter First Name here : ");
+        System.out.print("\nEnter First Name here : ");
         return input.stringInput();
     }
 
