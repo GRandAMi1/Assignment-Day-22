@@ -5,6 +5,7 @@ public class AddressBook {
 
         while (true) {
             System.out.println("1. add\n2. display");
+            System.out.println("Enter your choice : ");
             if (input.intInput() == 1) {
                 operations.add();
             }
