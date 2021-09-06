@@ -47,4 +47,10 @@ public class AddressBookOperations {
         item.mail = in.addmail();
     }
 
+    public void delete(){
+        Contact item = searchField();
+        addressBookSet.remove(item);
+
+    }
+
 }
