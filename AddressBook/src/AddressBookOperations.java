@@ -92,4 +92,14 @@ public class AddressBookOperations {
             }
         }
     }
+
+    public void searchByCityOrState() {
+        System.out.println("Enter name of City or State to search a person : ");
+        String temp = input.stringInput();
+        for (Contact item : addressBookSet) {
+            if (temp.equals(item.city) || temp.equals(item.state)){
+                System.out.println(item);
+            }
+        }
+    }
 }

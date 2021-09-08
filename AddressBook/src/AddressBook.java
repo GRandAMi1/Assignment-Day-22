@@ -13,6 +13,7 @@ public class AddressBook {
                 case 3 -> operations.edit();
                 case 4 -> operations.delete();
                 case 5 -> operations.searchByCity();
+                case 6 -> operations.searchByCityOrState();
                 case 0 -> {
                     a = 1;
                     System.out.println("Thank you for your Time");
