@@ -102,4 +102,16 @@ public class AddressBookOperations {
             }
         }
     }
+
+    public void totalByCityOrState() {
+        System.out.println("Enter name of City or State : ");
+        int total = 0;
+        String temp = input.stringInput();
+        for (Contact item : addressBookSet) {
+            if (temp.equals(item.city) || temp.equals(item.state)){
+                total = total + 1;
+            }
+        }
+        System.out.println("Contacts found in " + temp + " are : " + total);
+    }
 }
