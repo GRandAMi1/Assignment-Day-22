@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 
 public class AddressBookOperations {
 
@@ -7,11 +8,27 @@ public class AddressBookOperations {
     UserInputUtil input = new UserInputUtil();
 
     public void add() {
-        System.out.println("How many Contact details you want yo Enter : ");
-        for (int i = 0; i < input.intInput(); i++) {
-            Contact contact = new Contact(in.addFName(), in.addSName(), in.addAddress(), in.addCity(), in.addState(), in.addZip(), in.addno(), in.addmail());
-            addressBookSet.add(contact);
+        System.out.print("How many Contact details you want yo Enter : ");
+        int temp = input.intInput();
+        for (int i = 0; i < temp; i++) {
+            String fname = in.addFName();
+            if (contains(fname)){
+                System.out.println("First name already exists");break;
+            }
+            else {
+                    Contact contact = new Contact(fname, in.addSName(), in.addAddress(), in.addCity(), in.addState(), in.addZip(), in.addno(), in.addmail());
+                    addressBookSet.add(contact);
+            }
         }
+    }
+
+    public boolean contains(String fname) {
+        for (Contact item : addressBookSet) {
+            if (Objects.equals(item.fname, fname)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void display() {
@@ -19,7 +36,7 @@ public class AddressBookOperations {
     }
 
     public Contact searchField() {
-        System.out.println("Enter First Name of person to Edit Details : ");
+        System.out.println("Enter First Name of person : ");
         String fName = input.stringInput();
 
         for (Contact item : addressBookSet) {
@@ -29,17 +46,16 @@ public class AddressBookOperations {
         return null;
     }
 
-    public void edit(){
+    public void edit() {
         Contact item = searchField();
-        if (item != null){
+        if (item != null) {
             dataEdit(item);
-        }
-        else {
+        } else {
             System.out.println("First name you entered does not exist in our contacts");
         }
     }
 
-    public void dataEdit(Contact item){
+    public void dataEdit(Contact item) {
         item.fname = in.addFName();
         item.sname = in.addSName();
         item.adrs = in.addAddress();
@@ -50,7 +66,7 @@ public class AddressBookOperations {
         item.mail = in.addmail();
     }
 
-    public void delete(){
+    public void delete() {
         Contact item = searchField();
         addressBookSet.remove(item);
 
