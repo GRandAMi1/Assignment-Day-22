@@ -6,6 +6,17 @@ public class AddressBookOperations {
     HashSet<Contact> addressBookSet = new HashSet<>();
     InputsDetails in = new InputsDetails();
     UserInputUtil input = new UserInputUtil();
+    Contact contact = new Contact();
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Contact temp){
+            if (contact.fname.equals(temp.fname)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void add() {
         System.out.print("How many Contact details you want yo Enter : ");

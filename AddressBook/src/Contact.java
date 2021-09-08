@@ -21,6 +21,9 @@ public class Contact {
                 ", mail='" + mail + '\'' +
                 '}';
     }
+    public Contact(){
+
+    }
 
     public Contact(String fname, String sname, String adrs, String city, String state, String zipcode, String no, String mail) {
         this.fname = fname;
