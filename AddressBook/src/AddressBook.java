@@ -12,6 +12,7 @@ public class AddressBook {
                 case 2 -> operations.display();
                 case 3 -> operations.edit();
                 case 4 -> operations.delete();
+                case 5 -> operations.searchByCity();
                 case 0 -> {
                     a = 1;
                     System.out.println("Thank you for your Time");

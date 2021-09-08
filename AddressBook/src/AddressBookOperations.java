@@ -83,4 +83,13 @@ public class AddressBookOperations {
 
     }
 
+    public void searchByCity() {
+        System.out.println("Enter name of City to search a person : ");
+        String temp = input.stringInput();
+        for (Contact item : addressBookSet) {
+            if (temp.equals(item.city)){
+                System.out.println(item);
+            }
+        }
+    }
 }
